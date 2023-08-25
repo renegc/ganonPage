@@ -1,0 +1,170 @@
+/* 
+ Estilos generales para el cuerpo del documento 
+ */
+ body {
+    font-family: Arial, sans-serif; /* Establece la tipografía del documento a Arial, y si no está disponible, usará cualquier fuente sans-serif. */
+    margin: 0; /* Elimina cualquier margen predeterminado del cuerpo. */
+    padding: 3px; /* Agrega un relleno de 20px en todos los lados del cuerpo para separar el contenido del borde del navegador. */
+}
+
+/* 
+ Estilos para el contenedor principal de la cuadrícula 
+ */
+.grid-container {
+    display: grid; /* Establece el tipo de display a grid. */
+    grid-template-columns: 1fr; /* Crea una sola columna que ocupa todo el ancho disponible. */
+    gap: 20px; /* Establece un espacio de 20px entre cada elemento del grid. */
+    margin-bottom: 20px; /* Agrega un margen en la parte inferior para separar este grid de otros contenidos/elementos en la página. */
+}
+
+/* 
+ Estilos para cada elemento dentro del contenedor de la cuadrícula 
+ */
+.grid-item {
+    /*background-color: #f3f3f3; /* Da un color de fondo claro a cada elemento del grid. */
+    padding: 20px; /* Agrega un relleno interno de 20px en todos los lados del elemento. */
+   /*  border: 1px solid #ddd;  *//* Proporciona un borde sutil alrededor del elemento. */
+    /* border-radius: 4px; */ /* Redondea ligeramente las esquinas del elemento. */
+    text-align: center; /* Centra el texto horizontalmente dentro del elemento. */
+}
+
+/* 
+ Estilos específicos para la cabecera 
+ */
+.div-header {
+    background-color: beige; /* Establece el color de fondo a beige. */
+    display: flex; /* Usa flexbox para organizar el contenido interior. */
+    justify-content: center; /* Centra los elementos hijos horizontalmente. */
+    align-items: center; /* Centra los elementos hijos verticalmente. */
+    padding: 10px 0; /* Agrega un relleno vertical de 10px. */
+    flex-wrap: wrap; /* Permite que los elementos hijos se envuelvan al siguiente renglón si no hay espacio. */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible. */
+}
+
+/* 
+ Estilos para las imágenes dentro de .div-header 
+ */
+.header-image {
+    width: 100px; /* Establece el ancho de la imagen a 100px. */
+    height: 100px; /* Establece el alto de la imagen a 100px. */
+    object-fit: cover; /* Asegura que la imagen cubra completamente el espacio sin distorsionarse. */
+    margin: 0 10px; /* Establece un margen horizontal de 10px a ambos lados de la imagen. */
+}
+
+/* 
+ Estilos para contenedores de cuadrícula con dos elementos 
+ */
+.two-items {
+    grid-template-columns: repeat(2, 1fr); /* Divide el grid en dos columnas iguales. */
+}
+
+/* 
+ Estilos para un contenedor de cuadrícula que contiene un elemento con tres objetos 
+ */
+.three-objects .grid-item {
+    display: flex; /* Usa flexbox para organizar los objetos. */
+    justify-content: space-between; /* Distribuye los objetos uniformemente con espacio máximo entre ellos. */
+}
+
+.three-objects .object {
+    flex-basis: calc(33.33% - 10px); /* Establece la base para cada objeto a aproximadamente un tercio del espacio, restando 10px. */
+    text-align: center; /* Centra el texto dentro del objeto. */
+    background-color: #ccc; /* Da un color de fondo gris a cada objeto. */
+    padding: 10px; /* Añade un relleno de 10px en todos los lados del objeto. */
+    border-radius: 5px; /* Redondea ligeramente las esquinas del objeto. */
+}
+
+.rounded-image {
+    width: 80%;                /* Ocupa el 80% del ancho del div "half" */
+    max-width: 400px;         /* Limita el tamaño máximo de la imagen */
+    border-radius: 13px;      /* Bordes redondeados */
+    display: block;           /* La imagen es un bloque */
+    margin: 0 auto;           /* Centra la imagen horizontalmente */
+    object-fit: cover;        /* Ajusta el contenido de la imagen al espacio disponible sin recortar */
+}
+
+
+
+.grid-container.two-items > .grid-item:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.grid-container.two-items > .grid-item:nth-child(2) h3 {
+    color: lightblue;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.grid-container.two-items > .grid-item:nth-child(2) p {
+    margin-top: 0;
+}
+
+/* Estilos para el menú acordeón */
+.accordion {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+}
+
+/* Estilos para cada elemento/encabezado del acordeón */
+.accordion-header {
+    width: 100%;
+    text-align: left;
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+/* Cambio de estilo cuando se pasa el mouse sobre el encabezado */
+.accordion-header:hover {
+    background-color: #ddd;
+}
+
+/* Estilos para el contenido del acordeón */
+.accordion-content {
+    display: none; 
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-content.show {
+    display: block; /* Asegúrate de que el contenido se muestre cuando tiene la clase "show" */
+}
+
+
+/* 
+ Adaptaciones para pantallas medianas, como tabletas 
+ */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Asegura que todos los elementos ocupen el ancho completo en dispositivos medianos. */
+    }
+}
+
+/* 
+ Adaptaciones para pantallas pequeñas, como teléfonos móviles 
+ */
+@media (max-width: 480px) {
+    .three-objects .grid-item {
+        flex-direction: column; /* Organiza los objetos verticalmente. */
+    }
+    
+    .three-objects .object {
+        margin-bottom: 10px; /* Añade un margen en la parte inferior de cada objeto para espacio entre ellos. */
+        flex-basis: 100%; /* Asegura que cada objeto ocupe el ancho completo en dispositivos pequeños. */
+    }
+}

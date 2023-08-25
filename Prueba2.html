@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Responsivo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="estilito.css" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var acc = document.getElementsByClassName("accordion-header");
+            for (var i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.nextElementSibling.classList.toggle("show");
+                });
+            }
+        });
+    </script>
+  </head>
+  <body>
+    <!-- este es el grid 1 -->
+    <div class="grid-container">
+      <div class="grid-item div-header">
+        <img src="logo_contraloria.png" alt="Imagen 1" class="header-image" />
+        <img src="logo_contraloria.png" alt="Imagen 2" class="header-image" />
+        <img src="logo_contraloria.png" alt="Imagen 3" class="header-image" />
+      </div>
+    </div>
+    <!-- fin del grid 1 -->
+
+    <!-- Segundo grid-container -->
+    <div class="grid-container two-items">
+        <div class="grid-item">
+            <img src="ganon.webp" alt="Descripción de la imagen" class="rounded-image" />
+        </div>
+        <div class="grid-item">
+            <h3>Este es Ganondorf</h3>
+            <p>
+              Ganondorf, también conocido como el Rey de los Gerudo, es un poderoso
+              hechicero y maestro de la oscuridad. Originario del desierto de
+              Gerudo, busca constantemente apoderarse de la Trifuerza para dominar
+              el mundo. A pesar de sus numerosos intentos de conquista, siempre es
+              desafiado y, a menudo, derrotado por Link, el héroe de Hyrule. A lo
+              largo de la serie, se transforma en distintas formas, siendo Ganon su
+              versión bestial. Su ambición sin límites y su sed de poder lo han
+              convertido en una figura icónica en el universo de Zelda.
+            </p>
+    
+            <!-- Menú acordeón debajo del párrafo -->
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Opción 1</button>
+                    <div class="accordion-content show"> <!-- Agregamos la clase 'show' para que esté abierto por defecto -->
+                        <p>Contenido desplegable para la Opción 1.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Opción 2</button>
+                    <div class="accordion-content">
+                        <p>Contenido desplegable para la Opción 2.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Opción 3</button>
+                    <div class="accordion-content">
+                        <p>Contenido desplegable para la Opción 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin del Segundo grid-container -->
+
+    <!-- Tercer grid-container -->
+    <div class="grid-container two-items">
+      <div class="grid-item">Elemento 1</div>
+      <div class="grid-item">Elemento 2</div>
+    </div>
+    <!-- Fin Tercer grid-container -->
+
+    <!-- Cuarto grid-container -->
+    <div class="grid-container single-item">
+      <div class="grid-item">Elemento Único</div>
+    </div>
+    <!-- Fin Cuarto grid-container -->
+
+    <!-- Quinto grid-container -->
+    <div class="grid-container single-item three-objects">
+      <div class="grid-item">
+        <div class="object">Objeto 1</div>
+        <div class="object">Objeto 2</div>
+        <div class="object">Objeto 3</div>
+      </div>
+    </div>
+    <!-- Fin Quinto grid-container -->
+  </body>
+</html>
