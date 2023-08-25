@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="estilito.css" />
     <link rel="stylesheet" type="text/css" href="carouselStilon.css" />
+    <link rel="stylesheet" type="text/css" href="quintaSeccion.css" />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var acc = document.getElementsByClassName("accordion-header");
@@ -183,12 +184,13 @@
 
           <!-- Item 1 del Carousel -->
           <div class="carousel-item active">
-            <div class="grid-container two-items">
-              <div class="grid-item">
+            <div class="grid-container two-items"  style="height: 100%;" >
+              <div class="grid-item"  >
                 <img
                   src="TotK_English_Logo.webp"
                   alt="Imagen 1"
-                  class="rounded-image"
+                  class="rounded-image-carousel"
+               
                 />
               </div>
               <div class="grid-item">
@@ -200,9 +202,9 @@
 
           <!-- Item 2 del Carousel -->
           <div class="carousel-item">
-            <div class="grid-container two-items">
+            <div class="grid-container two-items" style="height: 100%;">
               <div class="grid-item">
-                <img src="ze.png" alt="Imagen 2" class="rounded-image" />
+                <img src="ze.png" alt="Imagen 2" class="rounded-image-carousel" />
               </div>
               <div class="grid-item">
                 <h2>La Zelda</h2>
@@ -213,9 +215,9 @@
 
           <!-- Item 3 del Carousel -->
           <div class="carousel-item">
-            <div class="grid-container two-items">
+            <div class="grid-container two-items" style="height: 100%;">
               <div class="grid-item">
-                <img src="linhh.png" alt="Imagen 3" class="rounded-image" />
+                <img src="linhh.png" alt="Imagen 3" class="rounded-image-carousel" />
               </div>
               <div class="grid-item">
                 <h2>Link</h3>
@@ -237,14 +239,23 @@
     </div>
     <!-- Fin Cuarto grid-container -->
 
-    <!-- Quinto grid-container -->
-    <div class="grid-container single-item three-objects">
-      <div class="grid-item">
-        <div class="object">Objeto 1</div>
-        <div class="object">Objeto 2</div>
-        <div class="object">Objeto 3</div>
+  <!-- Inicio del nuevo grid-container -->
+<div class="new-grid-container">
+    <div class="new-grid-item">
+      <div class="new-object" style="background-image: url('oot.jpg')">
+        <h3 class="new-object-title">Título Objeto 1</h3>
+        <button class="new-object-button">Botón</button>
+      </div>
+      <div class="new-object" style="background-image: url('majora.jpg')">
+        <h3 class="new-object-title">Título Objeto 2</h3>
+        <button class="new-object-button">Botón</button>
+      </div>
+      <div class="new-object" style="background-image: url('twilli.jpg')">
+        <h3 class="new-object-title">Título Objeto 3</h3>
+        <button class="new-object-button">Botón</button>
       </div>
     </div>
-    <!-- Fin Quinto grid-container -->
+</div>
+<!-- Fin del nuevo grid-container -->
   </body>
 </html>

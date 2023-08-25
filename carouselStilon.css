@@ -1,7 +1,7 @@
 .carousel {
     position: relative;
     width: 100%;
-    height: 500px; /* Define el alto del carrusel. Ajústalo según lo que necesites. */
+    height:500px; /* Define el alto del carrusel. Ajústalo según lo que necesites. */
     overflow: hidden; /* Esconde cualquier contenido del carrusel que exceda sus límites. */
 }
 
@@ -65,6 +65,16 @@
 
 .indicator.active {
     background-color: green;
+}
+
+.rounded-image-carousel {
+    width: 100%;            /* Ocupa el 80% del ancho del div "half" */
+    max-width: 500px;         /* Limita el tamaño máximo de la imagen */
+    border-radius: 13px;      /* Bordes redondeados */
+ max-height: 500px;
+    object-fit: contain;        /* Ajusta el contenido de la imagen al espacio disponible sin recortar */
+    height: 100%;
+
 }
 
 
