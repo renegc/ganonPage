@@ -103,48 +103,54 @@
     margin-top: 0;
 }
 
-/* Estilos para el menú acordeón */
+
+/*  acordeón */
+
+/* Estilo básico para el acordeón */
 .accordion {
-    width: 100%;
-    max-width: 400px;
-    margin: 20px 0;
+    width: 100%; /* Ocupa todo el ancho */
 }
 
-/* Estilos para cada elemento/encabezado del acordeón */
+.accordion-item {
+    margin-top: 0.5rem;
+}
+
 .accordion-header {
-    width: 100%;
-    text-align: left;
-    background-color: #f1f1f1;
-    color: #444;
+    background-color: #f3f3f3;
+    color: #333;
     cursor: pointer;
-    padding: 10px;
+    padding: 1rem;
     border: none;
-    border-bottom: 1px solid #ddd;
     text-align: left;
+    border-radius: 4px;
+    width: 100%;
     outline: none;
-    font-size: 15px;
-    transition: 0.4s;
+    transition: background-color 0.3s ease;
 }
 
-/* Cambio de estilo cuando se pasa el mouse sobre el encabezado */
 .accordion-header:hover {
     background-color: #ddd;
 }
 
-/* Estilos para el contenido del acordeón */
+/* Estilo para el contenido desplegable */
 .accordion-content {
-    display: none; 
-    padding: 0 10px;
     background-color: #f9f9f9;
-    border-bottom: 1px solid #ddd;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    padding: 0.5rem 1rem;
+    display: none; /* inicialmente oculto */
+    opacity: 0;
+    transform: translateY(-1em); /* desplaza el contenido hacia arriba */
+    transition: opacity 0.3s, transform 0.3s;
 }
 
+/* Estilo cuando el contenido está visible */
 .accordion-content.show {
-    display: block; /* Asegúrate de que el contenido se muestre cuando tiene la clase "show" */
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* desplaza el contenido a su posición original */
 }
 
+
+/*fin acordeon */
 
 /* 
  Adaptaciones para pantallas medianas, como tabletas 
