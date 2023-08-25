@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grid Responsivo</title>
+    <title>Ganon Page</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="estilito.css" />
     <link rel="stylesheet" type="text/css" href="carouselStilon.css" />
@@ -17,8 +17,64 @@
         }
       });
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const carouselButtons = document.querySelectorAll(".carousel-button");
+        const carouselItems = document.querySelectorAll(".carousel-item");
+        const indicators = document.querySelectorAll(".indicator");
 
+        let currentItem = 0;
+
+        carouselButtons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+            carouselItems[currentItem].classList.remove("active");
+            indicators[currentItem].classList.remove("active");
+
+            if (button.classList.contains("carousel-button-right")) {
+              currentItem = (currentItem + 1) % carouselItems.length;
+            } else {
+              currentItem =
+                (currentItem - 1 + carouselItems.length) % carouselItems.length;
+            }
+
+            carouselItems[currentItem].classList.add("active");
+            indicators[currentItem].classList.add("active");
+          });
+        });
+
+        function updateCarousel(newIndex) {
+          carouselItems[currentItem].classList.remove("active");
+          indicators[currentItem].classList.remove("active");
+          currentItem = newIndex;
+          carouselItems[currentItem].classList.add("active");
+          indicators[currentItem].classList.add("active");
+        }
+
+        // Escuchar click en cada indicador
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener("click", () => {
+            updateCarousel(index);
+          });
+        });
+
+        // Actualizar el código dentro del listener de los botones del carousel
+        carouselButtons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+            if (button.classList.contains("carousel-button-right")) {
+              updateCarousel((currentItem + 1) % carouselItems.length);
+            } else {
+              updateCarousel(
+                (currentItem - 1 + carouselItems.length) % carouselItems.length
+              );
+            }
+          });
+        });
+      });
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- este es el grid 1 -->
@@ -84,20 +140,20 @@
       <div class="grid-item">
         <div class="accordion">
           <div class="accordion-item">
-            <button class="accordion-header">Opción 1</button>
+            <button class="accordion-header">Opción 4</button>
             <div class="accordion-content">
               <!-- Agregamos la clase 'show' para que esté abierto por defecto -->
               <p>Contenido desplegable para la Opción 1.</p>
             </div>
           </div>
           <div class="accordion-item">
-            <button class="accordion-header">Opción 2</button>
+            <button class="accordion-header">Opción 4</button>
             <div class="accordion-content">
-              <p>Contenido desplegable para la Opción 2.</p>
+              <p>Contenido desplegable para la Opción 2</p>
             </div>
           </div>
           <div class="accordion-item">
-            <button class="accordion-header">Opción 3</button>
+            <button class="accordion-header">Opción 5</button>
             <div class="accordion-content">
               <p>Contenido desplegable para la Opción 3.</p>
             </div>
@@ -105,15 +161,79 @@
         </div>
       </div>
       <div class="grid-item centered-content">
-        <h2 class="custom-title">Estas de curioso? para mas informacion busca con esto</h2>
+        <h2 class="custom-title">
+          Estas de curioso? para mas informacion busca con esto
+        </h2>
         <button class="green-button">Presiona aquí</button>
       </div>
     </div>
     <!-- Fin Tercer grid-container -->
 
     <!-- Cuarto grid-container -->
-    <div class="grid-container single-item">
-      <div class="grid-item">Elemento Único</div>
+    <div class="grid-container single-item-single">
+      <div class="grid-item centered-content-singleSingle">
+        <h2 class="custom-title">
+          Màs datos relacionados con este viejito del desierto
+        </h2>
+
+        <!-- Carousel -->
+        <div class="carousel">
+          <!-- Botón Izquierdo -->
+          <button class="carousel-button carousel-button-left"> ‹ </button>
+
+          <!-- Item 1 del Carousel -->
+          <div class="carousel-item active">
+            <div class="grid-container two-items">
+              <div class="grid-item">
+                <img
+                  src="TotK_English_Logo.webp"
+                  alt="Imagen 1"
+                  class="rounded-image"
+                />
+              </div>
+              <div class="grid-item">
+                <h2>The Legend Of Zelda Tears Of The Kingdom</h2>
+                <p>pues este es el titulo del juego</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 del Carousel -->
+          <div class="carousel-item">
+            <div class="grid-container two-items">
+              <div class="grid-item">
+                <img src="ze.png" alt="Imagen 2" class="rounded-image" />
+              </div>
+              <div class="grid-item">
+                <h2>La Zelda</h2>
+                <p>pues es una princesa que nunca hace nada</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 del Carousel -->
+          <div class="carousel-item">
+            <div class="grid-container two-items">
+              <div class="grid-item">
+                <img src="linhh.png" alt="Imagen 3" class="rounded-image" />
+              </div>
+              <div class="grid-item">
+                <h2>Link</h3>
+                <p>Esta mamadisimo y no habla</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+          </div>
+
+          <!-- Botón Derecho -->
+          <button class="carousel-button carousel-button-right">› </button>
+        </div>
+      </div>
     </div>
     <!-- Fin Cuarto grid-container -->
 
