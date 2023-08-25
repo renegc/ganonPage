@@ -2,7 +2,7 @@
  Estilos generales para el cuerpo del documento 
  */
  body {
-    font-family: Arial, sans-serif; /* Establece la tipografía del documento a Arial, y si no está disponible, usará cualquier fuente sans-serif. */
+    font-family: 'Work Sans',Arial, sans-serif; /* Establece la tipografía del documento a Arial, y si no está disponible, usará cualquier fuente sans-serif. */
     margin: 0; /* Elimina cualquier margen predeterminado del cuerpo. */
     padding: 3px; /* Agrega un relleno de 20px en todos los lados del cuerpo para separar el contenido del borde del navegador. */
 }
@@ -93,10 +93,11 @@
     padding-left: 10px;
 }
 
-.grid-container.two-items > .grid-item:nth-child(2) h3 {
-    color: lightblue;
+.grid-container.two-items > .grid-item:nth-child(2) h2 {
+    color: #4a90e2;
     margin-top: 0;
     margin-bottom: 10px;
+    font-weight: 1000;
 }
 
 .grid-container.two-items > .grid-item:nth-child(2) p {
@@ -151,6 +152,42 @@
 
 
 /*fin acordeon */
+
+
+
+/*Inicio seccion 3*/
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.custom-title {
+    color: #4a90e2;  /* Usando el mismo color del h3 en el segundo grid */
+    margin-bottom: 20px;  /* Espacio entre el título y el botón */
+    font-weight: 1000;
+}
+
+.green-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+    background-color: darkgreen;
+}
+
+/*
+fin seccion
+*/
 
 /* 
  Adaptaciones para pantallas medianas, como tabletas 
