@@ -1,8 +1,8 @@
 .new-grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
+    grid-gap: 20px;    
+    width: 100%;
 }
 
 .new-grid-item {
@@ -11,8 +11,7 @@
 
 .new-object {
     position: relative;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 10px;  
     display: flex;
     flex-direction: column;
     justify-content: center;
